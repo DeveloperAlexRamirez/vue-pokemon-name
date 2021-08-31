@@ -6,7 +6,7 @@
     <PokemonPicture :pokemonId="pokemon.id" :showPokemon="showPokemon" />
 
     <!-- Opciones -->
-    <PokemonOptions :pokemons="pokemonArr" />
+    <PokemonOptions :pokemons="pokemonArr" @selection="checkAnswer" />
   </div>
 </template>
 
@@ -35,6 +35,10 @@ export default {
 
       const rndInt = Math.floor(Math.random() * 4);
       this.pokemon = this.pokemonArr[rndInt];
+    },
+
+    checkAnswer() {
+      console.log('pokemonpage');
     },
   },
 
